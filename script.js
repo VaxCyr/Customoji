@@ -15,8 +15,8 @@ async function handlercheckbutton() {
   const eName1 = EmojisName[emoji1.value]
   const eName2 = EmojisName[emoji2.value]
 
-  const nameImg1 = eName1 + "!" + eName2 + ".png"
-  const nameImg2 = eName2 + "!" + eName1 + ".png"
+  const nameImg1 = eName1 + "-" + eName2 + ".png"
+  const nameImg2 = eName2 + "-" + eName1 + ".png"
 
   // console.log(nameImg1);
   // console.log(nameImg2);
