@@ -5,12 +5,24 @@ async function handlercheckbutton() {
 
   // Vérifions que les inputs ne sont pas vide
 
-  console.log(emoji1.value, emoji2.value);
+  // console.log(typeof(emoji1.value), typeof(emoji2.value));
 
   if (!emoji1.value || !emoji2.value)  {
     alert("Je ne peux pas fusionner sans avoir deux émojis.")
     return;
   }
+
+  // Vérifions également que c'est des émojis
+  if (!isStrictEmoji(emoji1.value) || !isStrictEmoji(emoji2.value)) {
+    alert("Veuillez mettre des émojis (Win + ; sur Windows)")
+    return;
+  }
+
+
+  function isStrictEmoji(value) {
+  return /^\p{Extended_Pictographic}+$/u.test(value);
+  }
+
 
   const eName1 = EmojisName[emoji1.value]
   const eName2 = EmojisName[emoji2.value]
