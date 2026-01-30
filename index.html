@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customoji</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="text"id="title">Customoji</h1>
+    <div class="text">Quels émojis veux-tu fusionner ?</div>
+    <br></br>
+
+    <!-- Input Section -->
+    <div id="input-section">
+      <div class="inputs">
+        <input type="text" id="emoji1" placeholder="Premier emoji" maxlength="2">
+        <span class="plus">+</span>
+        <input type="text" id="emoji2" placeholder="Second emoji" maxlength="2">
+      </div>
+      <button id="check-btn" onclick="handlercheckbutton()">Valider</button>
+      <p id="error-msg" class="error"></p>
+    </div>
+  </div>
+
+  <div id="result" style="display:none"></div>
+
+  <script src="def.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
