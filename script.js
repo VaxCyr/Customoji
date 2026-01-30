@@ -31,7 +31,7 @@ async function handlercheckbutton() {
     let taille = 1000
 
     while (taille > 534 || taille < 0) {
-      let saisie = prompt("Entre une taille (0 = garder la taille de base) inférieur à 534:");
+      let saisie = prompt("Entre une taille (0 = default) inférieur à 534:");
       taille = Number(saisie);
     }
 
@@ -55,7 +55,7 @@ async function handlercheckbutton() {
       let taille = 1000
 
       while (taille > 534 || taille < 0) {
-        let saisie = prompt("Entre une taille (0 = garder la taille de base) inférieur à 534:");
+        let saisie = prompt("Entre une taille (0 = default) inférieur à 534:");
         taille = Number(saisie);
       }
       
