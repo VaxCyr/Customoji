@@ -1,11 +1,13 @@
 async function handlercheckbutton() {
 
-  const emoji1 = document.getElementById("emoji1");
-  const emoji2 = document.getElementById("emoji2");
+  const emoji1 = document.getElementById("first");
+  const emoji2 = document.getElementById("second");
 
   // Vérifions que les inputs ne sont pas vide
 
-  if (emoji1 === null || emoji2 === null)  {
+  console.log(emoji1.value, emoji2.value);
+
+  if (!emoji1.value || !emoji2.value)  {
     alert("Je ne peux pas fusionner sans avoir deux émojis.")
     return;
   }
