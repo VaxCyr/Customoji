@@ -36,29 +36,6 @@ body {
   font-weight: bold;
 }
 
-/* button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin: 5px;
-  transition: background 0.2s;
-} 
-
-button:hover {
-  background-color: #0056b3;
-}
-
-button.secondary {
-  background-color: #6c757d;
-}
-
-button.secondary:hover {
-  background-color: #545b62;
-} */
 
 
 #result {
@@ -90,9 +67,6 @@ button {
  background-color: var(--btn-color);
  border-radius: 1em;
  outline: none;
- /* box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 1em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color); */
  text-shadow: 0 0 .5em var(--glow-color);
  position: relative;
  transition: all 0.3s;
@@ -146,7 +120,7 @@ input[type="text"] {
         0 0 4em 1em var(--glow-spread-color),
         inset 0 0 .75em .25em var(--glow-color);
  text-shadow: 0 0 .5em var(--glow-color);
- position: relative;
+ 
  transition: all 0.3s;
 
  width: 120px;
@@ -162,12 +136,6 @@ input[type="text"]::placeholder {
   font-weight: bold;
   text-shadow: 0 0 .5em rgb(217, 176, 255);
 }
-
-
-.result {
-  background-color: rgb(100, 61, 136);
-}
-
 
 
 @media (max-width: 600px) {
@@ -192,8 +160,12 @@ input[type="text"]::placeholder {
   input[type="text"] {
     width: 20%;
     max-width: 280px;
-    height: 55px;
     font-size: 12px;
+
+    height: auto;              /* enlève la contrainte */
+    padding: 1.2em 2em;      /* plus de place au texte */
+    line-height: 1.4;          /* espace vertical du texte */
+
   }
 
   button {
@@ -208,11 +180,6 @@ input[type="text"]::placeholder {
     padding: 15px;
   }
 
-  input[type="text"] {
-  height: auto;              /* enlève la contrainte */
-  padding: 1.2em 2em;      /* plus de place au texte */
-  line-height: 1.4;          /* espace vertical du texte */
-}
 
 }
 
@@ -237,9 +204,6 @@ input[type="text"]::placeholder {
 .emoji-picker-btn:hover {
   color: var(--btn-color);
   background-color: var(--glow-color);
-  /* box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 2em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color); */
 }
 
 .emoji-dropdown {
