@@ -12,9 +12,8 @@ async function handlercheckbutton() {
     return;
   }
 
-  // Vérifions également que c'est des émojis
-  if (!isStrictEmoji(emoji1.value) || !isStrictEmoji(emoji2.value)) {
-    alert("Veuillez mettre des émojis (Win + ; sur Windows)")
+  if (!getEmojiName(emoji1.value) || !getEmojiName(emoji2.value)) {
+    alert("Veuillez mettre des émojis (Win + ; sur Windows) ou un nom d'émoji Discord (ex: heart, smiley)")
     return;
   }
 
@@ -23,9 +22,22 @@ async function handlercheckbutton() {
   return /^\p{Extended_Pictographic}+$/u.test(value);
   }
 
+  function getEmojiName(value) {
+    // Check if it's a strict emoji
+    if (isStrictEmoji(value)) {
+      return EmojisName[value];
+    }
+    // Check if it's a Discord emoji name
+    const discordNames = Object.values(EmojisName);
+    if (discordNames.includes(value)) {
+      return value;
+    }
+    return null;
+  }
 
-  const eName1 = EmojisName[emoji1.value]
-  const eName2 = EmojisName[emoji2.value]
+
+  const eName1 = getEmojiName(emoji1.value)
+  const eName2 = getEmojiName(emoji2.value)
 
   const nameImg1 = eName1 + "-" + eName2 + ".png"
   const nameImg2 = eName2 + "-" + eName1 + ".png"
