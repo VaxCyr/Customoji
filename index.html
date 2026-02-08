@@ -20,8 +20,12 @@
     <div id="input-section">
       <div class="inputs">
         <input type="text" id="first" placeholder="1er emoji" maxlength="30">
-        <span class="plus">+</span>
-        <input type="text" id="second" placeholder="2nd emoji" maxlength="30">
+          <button id="btn-first-emoji" class="emoji-picker-btn">😊</button>
+          <div id="dropdown-first" class="emoji-dropdown"></div>
+          <span class="plus">+</span>
+          <input type="text" id="second" placeholder="2nd emoji" maxlength="30">
+          <button id="btn-second-emoji" class="emoji-picker-btn">😊</button>
+          <div id="dropdown-second" class="emoji-dropdown"></div>
       </div>
       <button id="check-btn" onclick="handlercheckbutton()">Valider</button>
       <p id="error-msg" class="error"></p>

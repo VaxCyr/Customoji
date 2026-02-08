@@ -151,3 +151,63 @@ function afficherImage(src) {
   document.getElementById("result").style.display = "flex";
   
 }
+
+// Populate emoji dropdowns
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdownFirst = document.getElementById("dropdown-first");
+  const dropdownSecond = document.getElementById("dropdown-second");
+
+  for (const emoji in EmojisName) {
+    const span1 = document.createElement("span");
+    span1.textContent = emoji;
+    span1.classList.add("emoji-item");
+    span1.dataset.emoji = emoji;
+    dropdownFirst.appendChild(span1);
+
+    const span2 = document.createElement("span");
+    span2.textContent = emoji;
+    span2.classList.add("emoji-item");
+    span2.dataset.emoji = emoji;
+    dropdownSecond.appendChild(span2);
+  }
+
+  const btnFirstEmoji = document.getElementById("btn-first-emoji");
+  const btnSecondEmoji = document.getElementById("btn-second-emoji");
+  const inputFirst = document.getElementById("first");
+  const inputSecond = document.getElementById("second");
+
+  btnFirstEmoji.addEventListener("click", (event) => {
+    event.stopPropagation();
+    dropdownFirst.classList.toggle("show");
+    dropdownSecond.classList.remove("show");
+  });
+
+  btnSecondEmoji.addEventListener("click", (event) => {
+    event.stopPropagation();
+    dropdownSecond.classList.toggle("show");
+    dropdownFirst.classList.remove("show");
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!dropdownFirst.contains(event.target) && !btnFirstEmoji.contains(event.target)) {
+      dropdownFirst.classList.remove("show");
+    }
+    if (!dropdownSecond.contains(event.target) && !btnSecondEmoji.contains(event.target)) {
+      dropdownSecond.classList.remove("show");
+    }
+  });
+
+  dropdownFirst.addEventListener("click", (event) => {
+    if (event.target.classList.contains("emoji-item")) {
+      inputFirst.value = event.target.dataset.emoji;
+      dropdownFirst.classList.remove("show");
+    }
+  });
+
+  dropdownSecond.addEventListener("click", (event) => {
+    if (event.target.classList.contains("emoji-item")) {
+      inputSecond.value = event.target.dataset.emoji;
+      dropdownSecond.classList.remove("show");
+    }
+  });
+});

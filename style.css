@@ -18,7 +18,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   text-align: center;
-  max-width: 500px;
+  max-width: 700px;
   width: 100%;
 }
 
@@ -90,9 +90,9 @@ button {
  background-color: var(--btn-color);
  border-radius: 1em;
  outline: none;
- box-shadow: 0 0 1em .25em var(--glow-color),
+ /* box-shadow: 0 0 1em .25em var(--glow-color),
         0 0 4em 1em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
+        inset 0 0 .75em .25em var(--glow-color); */
  text-shadow: 0 0 .5em var(--glow-color);
  position: relative;
  transition: all 0.3s;
@@ -214,4 +214,74 @@ input[type="text"]::placeholder {
   line-height: 1.4;          /* espace vertical du texte */
 }
 
+}
+
+.emoji-picker-btn {
+  /* Style for the emoji picker button */
+  padding: 0.1em 0.1em;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: transparent;
+  color: white;
+  border: .25em solid var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  transition: all 0.3s;
+  --glow-color: null
+  
+}
+
+.emoji-picker-btn:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  /* box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color); */
+}
+
+.emoji-dropdown {
+  display: none;
+  position: absolute;
+  background-color: #1e1e1e;
+  border: 1px solid var(--glow-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 250px; /* Adjust width as needed */
+}
+
+.emoji-dropdown.show {
+  display: flex;
+}
+
+.emoji-item {
+  cursor: pointer;
+  padding: 5px;
+  font-size: 1.5rem;
+  transition: background-color 0.2s;
+}
+
+.emoji-item:hover {
+  background-color: #333;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .emoji-dropdown {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+  }
+}
+
+#btn-first-emoji {
+  order:-1
 }
