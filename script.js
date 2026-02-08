@@ -57,7 +57,7 @@ async function handlercheckbutton() {
         finalImg = "Images/"+nameImg1;
       }
 
-      console.log("Image trouvée 1er IF")
+      // console.log("Image trouvée 1er IF")
 
   } else {
 
@@ -80,7 +80,7 @@ async function handlercheckbutton() {
           finalImg = "Images/"+nameImg2;
         }
 
-      console.log("Image trouvée 2er IF")
+      // console.log("Image trouvée 2er IF")
         
     }
 
