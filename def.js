@@ -467,5 +467,6 @@ const EmojisName = {
   "🐍": "snake",
   "🦖": "t-rex",
   "🐙": "octopus",
-  "🦑": "squid"
+  "🦑": "squid",
+  "🍀": "four_leaf_clover"
 }
